@@ -1,0 +1,4 @@
+*.sublime-*
+*~
+test
+testgit/
