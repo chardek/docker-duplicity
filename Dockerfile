@@ -1,11 +1,12 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 MAINTAINER Chris Hardekopf <chrish@basis.com>
 
 # Install duplicity from ppa
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     wget python python-dev python-pip librsync-dev \
-    ncftp lftp rsync software-properties-common && \
+    ncftp lftp rsync software-properties-common \
+    libffi-dev libssl-dev && \
     add-apt-repository -y ppa:duplicity-team/ppa && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y duplicity && \
